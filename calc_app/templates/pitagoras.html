@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+<title>Calculadora de Pitágoras</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script>
+
+var btn = document.querySelector("#refresh");
+btn.addEventListener("click", function() {
+    
+    location.reload();
+});
+
+</script>
+
+</head>
+<body>
+    <div>
+       
+        <nav class="navbar navbar-primary bg-primary">
+            <span class="navbar-brand mb-0 h1">Calculadora de Pitágoras</span>
+           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
+        <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+       <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+     </svg>
+         </nav><br>
+         <h5 class="text-center">  Em qualquer triângulo retângulo, o quadrado do comprimento da hipotenusa é igual à soma dos quadrados dos comprimentos dos catetos.</h5><br>
+        <form action="" method="post">
+           
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 pb-5">
+          
+                            <form action="" method="post">
+                                <div class="card border-primary rounded-0">
+                                    <div class="card-header p-0">
+                                        <div class="bg-info text-white text-center py-2">
+                                            <h3 style="color: black;"> Fórmula de Pitágoras: c² = a² + b²</h3>
+                                            
+                                        </div>
+                                    </div>
+                                   <center> <div class="card shadow-lg p-3 bg-white rounded" >
+        
+                                        <!--Body-->
+                                     <div class="form-group">
+                                            <label for="catetoOposto"><b>Cateto Oposto (b)</b></label><br>
+                              
+                                                {{ form.cat1 }}
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="catetoAdjacente"><b>Cateto Adjacnte (a)</b></label><br>
+                                        
+                                                {{ form.cat2 }}
+                                          
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg " style="color: black;">Calcular</button>   <button type="reset" class="btn btn-warning btn-lg" style="color: black;">Limpar</button> 
+                                        </div><br>
+    
+                                        <div class="form-group">
+                                            <label for="hipotenusa"><b>SUA HIPOTENUSA É:</b></label><br>
+                                            <b style="color: darkred;">{{ hipotenusa }}</b>
+                                          
+                                        </div>
+        
+                                    </div>
+        
+                                </div></center>
+                            </form>
+                            
+                            <br>
+                            <nav class="navbar navbar-primary bg-primary">
+                                  <span class="navbar-brand mb-0 " style="color: black;">Projeto desenvolvido por Roberta Di Blasio Ribeiro - 2021</span>
+                             </nav>
+    </div>
+   
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
