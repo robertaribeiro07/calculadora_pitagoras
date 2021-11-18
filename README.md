@@ -14,7 +14,7 @@ O projeto foi desenvolvido no VSCode, onde fiz uma API em python com Django para
 
 1. Python
 2. Django
-3. Bootsratp (no front-end)
+3. Bootstrap (no front-end)
 
 
 
